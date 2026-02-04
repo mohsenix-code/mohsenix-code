@@ -1,15 +1,21 @@
 <div align="center">
 
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8e2de2,100:4a00e0&height=300&section=header&text=Vibe%20Engineer%20%26%20Developer&fontSize=50&animation=fadeIn&fontAlignY=38&desc=Building%20the%20future%20with%20n8n%20%26%20AI&descAlignY=55&descAlign=62" alt="header" />
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:7C3AED&height=220&section=header&text=MOHSENIX&fontSize=80&animation=fadeIn&fontAlignY=45&fontColor=ffffff" width="100%" alt="Mohsenix Header" />
 
-  <h1>👋 Hi, I'm Mohsen!</h1>
-  
+  <br />
+
   <a href="https://github.com/mohsenix-code">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=23F7DD&center=true&vCenter=true&width=435&lines=Vibe+Coder;Automation+Specialist+(n8n);AI+Integrator;Modern+Web+Developer" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&weight=700&size=32&pause=1000&color=A78BFA&center=true&vCenter=true&width=600&lines=VIBE+ENGINEER;AUTOMATION+ARCHITECT;AI+INTEGRATOR" alt="Typing SVG" />
   </a>
 
-</div>
+  <br />
 
+  <img src="https://raw.githubusercontent.com/andriano-hardy/andriano-hardy/master/assets/line-header.gif" width="70%" height="3px" />
+  
+  <br />
+  <br />
+
+</div>
 ---
 
 ### 🚀 About Me
