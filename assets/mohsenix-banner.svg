@@ -1,151 +1,224 @@
-<svg width="1200" height="320" viewBox="0 0 1200 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Mohsen Afsharpour</title>
-  <desc id="desc">Animated profile banner — I make ideas executable.</desc>
+<svg width="1200" height="360" viewBox="0 0 1200 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Mohsenix — animated profile header</title>
+  <desc id="desc">A kinetic neon header with aurora colors, animated waves, glitch typography, and a live command line.</desc>
 
   <defs>
-    <linearGradient id="movingAccent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#58A6FF" stop-opacity="0"/>
-      <stop offset=".5" stop-color="#79C0FF"/>
-      <stop offset="1" stop-color="#A371F7" stop-opacity="0"/>
+    <linearGradient id="titleGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22D3EE">
+        <animate attributeName="stop-color" values="#22D3EE;#A78BFA;#F472B6;#22D3EE" dur="7s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset=".5" stop-color="#A78BFA">
+        <animate attributeName="stop-color" values="#A78BFA;#F472B6;#22D3EE;#A78BFA" dur="7s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="1" stop-color="#F472B6">
+        <animate attributeName="stop-color" values="#F472B6;#22D3EE;#A78BFA;#F472B6" dur="7s" repeatCount="indefinite"/>
+      </stop>
     </linearGradient>
 
-    <clipPath id="nameReveal">
-      <rect x="62" y="104" width="0" height="80">
-        <animate attributeName="width" from="0" to="650" begin=".45s" dur="1.15s" fill="freeze" calcMode="spline" keySplines=".16 1 .3 1"/>
+    <radialGradient id="cyanBlob">
+      <stop offset="0" stop-color="#06B6D4" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#06B6D4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="violetBlob">
+      <stop offset="0" stop-color="#7C3AED" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pinkBlob">
+      <stop offset="0" stop-color="#DB2777" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#DB2777" stop-opacity="0"/>
+    </radialGradient>
+
+    <pattern id="dotGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.1" fill="#94A3B8" opacity=".17"/>
+    </pattern>
+
+    <linearGradient id="tickerFade">
+      <stop offset="0" stop-color="black"/>
+      <stop offset=".08" stop-color="white"/>
+      <stop offset=".92" stop-color="white"/>
+      <stop offset="1" stop-color="black"/>
+    </linearGradient>
+    <mask id="tickerMask">
+      <rect x="30" y="320" width="1140" height="24" fill="url(#tickerFade)"/>
+    </mask>
+
+    <clipPath id="commandReveal">
+      <rect x="106" y="263" width="0" height="30">
+        <animate attributeName="width" from="0" to="505" begin=".75s" dur="2.1s" fill="freeze" calcMode="spline" keySplines=".25 .1 .25 1"/>
       </rect>
     </clipPath>
 
-    <clipPath id="taglineReveal">
-      <rect x="66" y="204" width="0" height="45">
-        <animate attributeName="width" from="0" to="410" begin="1.55s" dur="1.25s" fill="freeze" calcMode="spline" keySplines=".22 1 .36 1"/>
-      </rect>
-    </clipPath>
-
-    <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
+    <filter id="neon" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.15  0 1 0 0 0.05  0 0 1 0 0.35  0 0 0 .75 0"/>
       <feMerge>
-        <feMergeNode in="blur"/>
+        <feMergeNode/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
+    <filter id="softBlur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
+
     <style>
-      .fade-up {
+      .grid {
+        animation: gridDrift 18s linear infinite;
+      }
+      .blob-a {
+        animation: blobA 11s ease-in-out infinite alternate;
+        transform-origin: center;
+      }
+      .blob-b {
+        animation: blobB 14s ease-in-out infinite alternate;
+        transform-origin: center;
+      }
+      .blob-c {
+        animation: blobC 12s ease-in-out infinite alternate;
+        transform-origin: center;
+      }
+      .wave-one {
+        stroke-dasharray: 11 14;
+        animation: dashForward 9s linear infinite;
+      }
+      .wave-two {
+        stroke-dasharray: 4 18;
+        animation: dashBack 11s linear infinite;
+      }
+      .main-title {
+        animation: titleFloat 5s ease-in-out infinite;
+        transform-origin: 600px 170px;
+      }
+      .glitch-cyan, .glitch-pink {
         opacity: 0;
-        animation: fadeUp .7s cubic-bezier(.16,1,.3,1) forwards;
       }
-      .label { animation-delay: .15s; }
-      .handle { animation-delay: .35s; }
-      .monogram { animation-delay: .75s; transform-origin: 990px 161px; }
-      .skills { animation-delay: 2.45s; }
-      .url { animation-delay: 2.7s; }
-
-      .divider {
-        stroke-dasharray: 595;
-        stroke-dashoffset: 595;
-        animation: drawLine .9s cubic-bezier(.16,1,.3,1) 1.15s forwards;
+      .glitch-cyan {
+        animation: glitchCyan 5.8s steps(1,end) infinite;
       }
-
-      .outer-ring {
-        transform-origin: 990px 161px;
-        animation: rotateRing 13s linear infinite;
+      .glitch-pink {
+        animation: glitchPink 5.8s steps(1,end) infinite;
       }
-
-      .orbit-dot {
-        transform-origin: 990px 161px;
-        animation: rotateRing 5.5s linear infinite;
-        filter: url(#softGlow);
+      .live-dot {
+        animation: livePulse 1.4s ease-in-out infinite;
       }
-
-      .inner-ring {
-        animation: breathe 3s ease-in-out infinite;
-      }
-
-      .status-dot {
-        animation: pulse 1.8s ease-in-out infinite;
-      }
-
       .cursor {
+        animation: cursorBlink .72s steps(1,end) 2.85s infinite;
         opacity: 0;
-        animation: blink .8s steps(1,end) 2.75s infinite;
+      }
+      .ticker {
+        animation: tickerMove 22s linear infinite;
+      }
+      .corner {
+        animation: cornerPulse 3s ease-in-out infinite;
       }
 
-      .scan {
-        animation: scan 4.8s ease-in-out 2.9s infinite;
+      @keyframes gridDrift {
+        to { transform: translate(30px, 30px); }
       }
-
-      @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
+      @keyframes blobA {
+        from { transform: translate(-50px, -20px) scale(.9); }
+        to { transform: translate(120px, 32px) scale(1.22); }
       }
-      @keyframes drawLine {
-        to { stroke-dashoffset: 0; }
+      @keyframes blobB {
+        from { transform: translate(85px, 34px) scale(1.15); }
+        to { transform: translate(-105px, -28px) scale(.88); }
       }
-      @keyframes rotateRing {
-        to { transform: rotate(360deg); }
+      @keyframes blobC {
+        from { transform: translate(-15px, 42px) scale(.92); }
+        to { transform: translate(70px, -35px) scale(1.18); }
       }
-      @keyframes breathe {
+      @keyframes dashForward {
+        to { stroke-dashoffset: -300; }
+      }
+      @keyframes dashBack {
+        to { stroke-dashoffset: 300; }
+      }
+      @keyframes titleFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
+      }
+      @keyframes glitchCyan {
+        0%, 88%, 92%, 100% { opacity: 0; transform: translate(0,0); }
+        89% { opacity: .75; transform: translate(-7px,2px); }
+        90% { opacity: .45; transform: translate(4px,-2px); }
+        91% { opacity: .7; transform: translate(-2px,1px); }
+      }
+      @keyframes glitchPink {
+        0%, 88%, 92%, 100% { opacity: 0; transform: translate(0,0); }
+        89% { opacity: .55; transform: translate(6px,-2px); }
+        90% { opacity: .7; transform: translate(-3px,3px); }
+        91% { opacity: .4; transform: translate(3px,-1px); }
+      }
+      @keyframes livePulse {
+        0%, 100% { opacity: .35; transform: scale(.8); }
+        50% { opacity: 1; transform: scale(1.25); }
+      }
+      @keyframes cursorBlink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      @keyframes tickerMove {
+        to { transform: translateX(-850px); }
+      }
+      @keyframes cornerPulse {
         0%, 100% { opacity: .25; }
-        50% { opacity: .75; }
-      }
-      @keyframes pulse {
-        0%, 100% { opacity: .45; }
-        50% { opacity: 1; }
-      }
-      @keyframes blink {
-        0%, 48% { opacity: 1; }
-        49%, 100% { opacity: 0; }
-      }
-      @keyframes scan {
-        0% { transform: translateX(-360px); opacity: 0; }
-        15% { opacity: .8; }
-        65% { opacity: .8; }
-        100% { transform: translateX(1280px); opacity: 0; }
+        50% { opacity: .8; }
       }
 
       @media (prefers-reduced-motion: reduce) {
         * { animation: none !important; }
-        .fade-up { opacity: 1; }
-        .divider { stroke-dashoffset: 0; }
-        .cursor { opacity: 1; }
+        .cursor, .glitch-cyan, .glitch-pink { opacity: 0; }
       }
     </style>
   </defs>
 
-  <rect width="1200" height="320" rx="24" fill="#0D1117"/>
-  <rect x="18" y="18" width="1164" height="284" rx="14" stroke="#30363D"/>
+  <rect width="1200" height="360" rx="26" fill="#05060A"/>
+  <rect x="1" y="1" width="1198" height="358" rx="25" stroke="#30363D" stroke-width="2"/>
 
-  <g class="scan">
-    <rect x="-220" y="19" width="260" height="282" fill="url(#movingAccent)" opacity=".12"/>
+  <g filter="url(#softBlur)">
+    <ellipse class="blob-a" cx="270" cy="90" rx="240" ry="150" fill="url(#cyanBlob)"/>
+    <ellipse class="blob-b" cx="860" cy="130" rx="290" ry="170" fill="url(#violetBlob)"/>
+    <ellipse class="blob-c" cx="600" cy="300" rx="250" ry="130" fill="url(#pinkBlob)"/>
   </g>
 
-  <g class="fade-up handle">
-    <circle class="status-dot" cx="1090" cy="70" r="4" fill="#58A6FF"/>
-    <text x="1070" y="75" text-anchor="end" fill="#8B949E" font-family="Arial, sans-serif" font-size="12" letter-spacing="2">MOHSENIX</text>
+  <rect class="grid" x="-30" y="-30" width="1260" height="420" fill="url(#dotGrid)"/>
+
+  <path class="wave-one" d="M-40 228C144 144 260 286 433 210C605 135 710 257 872 187C1009 127 1102 183 1240 129" stroke="#22D3EE" stroke-opacity=".25" stroke-width="1.5"/>
+  <path class="wave-two" d="M-60 111C99 190 251 78 407 143C584 218 693 91 845 153C1016 222 1118 105 1260 168" stroke="#C084FC" stroke-opacity=".28" stroke-width="1.5"/>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">
+    <path class="corner" d="M35 58V35H58" stroke="#22D3EE"/>
+    <path class="corner" d="M1142 35H1165V58" stroke="#A78BFA"/>
+    <text x="53" y="60" fill="#94A3B8" font-size="11" letter-spacing="2.2">MOHSEN AFSHARPOUR / DIGITAL BUILDER</text>
+    <circle class="live-dot" cx="1100" cy="56" r="4" fill="#34D399"/>
+    <text x="1112" y="60" fill="#94A3B8" font-size="11" letter-spacing="1.5">LIVE</text>
   </g>
 
-  <text class="fade-up label" x="70" y="92" fill="#8B949E" font-family="Arial, sans-serif" font-size="13" letter-spacing="4">HELLO, I’M</text>
-
-  <g clip-path="url(#nameReveal)">
-    <text x="66" y="168" fill="#F0F6FC" font-family="Georgia, 'Times New Roman', serif" font-size="68" font-weight="700" letter-spacing="-1">Mohsen Afsharpour</text>
+  <g class="main-title" font-family="Arial Black, Arial, sans-serif" font-size="112" font-weight="900" letter-spacing="6" text-anchor="middle">
+    <text x="600" y="203" fill="none" stroke="#F8FAFC" stroke-opacity=".1" stroke-width="2">MOHSENIX</text>
+    <text class="glitch-cyan" x="600" y="203" fill="#22D3EE">MOHSENIX</text>
+    <text class="glitch-pink" x="600" y="203" fill="#F472B6">MOHSENIX</text>
+    <text x="600" y="203" fill="url(#titleGradient)" filter="url(#neon)">MOHSENIX</text>
   </g>
 
-  <line class="divider" x1="70" y1="196" x2="665" y2="196" stroke="#30363D"/>
-
-  <g clip-path="url(#taglineReveal)">
-    <text x="70" y="235" fill="#79C0FF" font-family="Georgia, 'Times New Roman', serif" font-size="27" font-style="italic">I make ideas executable.</text>
-  </g>
-  <rect class="cursor" x="390" y="210" width="2" height="30" rx="1" fill="#79C0FF"/>
-
-  <g class="fade-up monogram">
-    <circle class="outer-ring" cx="990" cy="161" r="82" stroke="#58A6FF" stroke-opacity=".5" stroke-width="2" stroke-dasharray="22 12 4 12"/>
-    <circle class="inner-ring" cx="990" cy="161" r="66" stroke="#A371F7" stroke-opacity=".5"/>
-    <g class="orbit-dot">
-      <circle cx="990" cy="79" r="4" fill="#79C0FF"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">
+    <rect x="68" y="248" width="1064" height="53" rx="12" fill="#080B12" fill-opacity=".86" stroke="#273244"/>
+    <circle cx="89" cy="274.5" r="5" fill="#34D399"/>
+    <g clip-path="url(#commandReveal)">
+      <text x="106" y="281" fill="#E2E8F0" font-size="17">
+        <tspan fill="#7DD3FC">&gt;</tspan>
+        <tspan> build(</tspan><tspan fill="#C4B5FD">"ideas"</tspan><tspan>).automate(</tspan><tspan fill="#F9A8D4">"work"</tspan><tspan>).ship();</tspan>
+      </text>
     </g>
-    <text x="990" y="178" text-anchor="middle" fill="#F0F6FC" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700">M/X</text>
+    <rect class="cursor" x="579" y="262" width="2.5" height="24" fill="#7DD3FC"/>
+    <text x="1104" y="280" text-anchor="end" fill="#475569" font-size="11">STATUS 200 / BUILDING</text>
   </g>
 
-  <text class="fade-up skills" x="70" y="278" fill="#8B949E" font-family="Arial, sans-serif" font-size="12" letter-spacing="2.2">VIBE CODING  ·  PROMPT SYSTEMS  ·  AI AUTOMATION</text>
-  <text class="fade-up url" x="1125" y="278" text-anchor="end" fill="#8B949E" font-family="Arial, sans-serif" font-size="12">github.com/mohsenix-code</text>
+  <g mask="url(#tickerMask)">
+    <g class="ticker" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11" letter-spacing="2.5" fill="#64748B">
+      <text x="45" y="340">VIBE CODING  •  PROMPT ENGINEERING  •  AI AGENTS  •  N8N AUTOMATION  •  IDEAS INTO PRODUCTS  •</text>
+      <text x="895" y="340">VIBE CODING  •  PROMPT ENGINEERING  •  AI AGENTS  •  N8N AUTOMATION  •  IDEAS INTO PRODUCTS  •</text>
+      <text x="1745" y="340">VIBE CODING  •  PROMPT ENGINEERING  •  AI AGENTS  •  N8N AUTOMATION  •  IDEAS INTO PRODUCTS  •</text>
+    </g>
+  </g>
 </svg>
