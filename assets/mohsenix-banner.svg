@@ -1,23 +1,151 @@
 <svg width="1200" height="320" viewBox="0 0 1200 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">Mohsen Afsharpour</title>
-  <desc id="desc">I make ideas executable — vibe coding, prompt systems, and AI automation.</desc>
+  <desc id="desc">Animated profile banner — I make ideas executable.</desc>
+
+  <defs>
+    <linearGradient id="movingAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#58A6FF" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#79C0FF"/>
+      <stop offset="1" stop-color="#A371F7" stop-opacity="0"/>
+    </linearGradient>
+
+    <clipPath id="nameReveal">
+      <rect x="62" y="104" width="0" height="80">
+        <animate attributeName="width" from="0" to="650" begin=".45s" dur="1.15s" fill="freeze" calcMode="spline" keySplines=".16 1 .3 1"/>
+      </rect>
+    </clipPath>
+
+    <clipPath id="taglineReveal">
+      <rect x="66" y="204" width="0" height="45">
+        <animate attributeName="width" from="0" to="410" begin="1.55s" dur="1.25s" fill="freeze" calcMode="spline" keySplines=".22 1 .36 1"/>
+      </rect>
+    </clipPath>
+
+    <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      .fade-up {
+        opacity: 0;
+        animation: fadeUp .7s cubic-bezier(.16,1,.3,1) forwards;
+      }
+      .label { animation-delay: .15s; }
+      .handle { animation-delay: .35s; }
+      .monogram { animation-delay: .75s; transform-origin: 990px 161px; }
+      .skills { animation-delay: 2.45s; }
+      .url { animation-delay: 2.7s; }
+
+      .divider {
+        stroke-dasharray: 595;
+        stroke-dashoffset: 595;
+        animation: drawLine .9s cubic-bezier(.16,1,.3,1) 1.15s forwards;
+      }
+
+      .outer-ring {
+        transform-origin: 990px 161px;
+        animation: rotateRing 13s linear infinite;
+      }
+
+      .orbit-dot {
+        transform-origin: 990px 161px;
+        animation: rotateRing 5.5s linear infinite;
+        filter: url(#softGlow);
+      }
+
+      .inner-ring {
+        animation: breathe 3s ease-in-out infinite;
+      }
+
+      .status-dot {
+        animation: pulse 1.8s ease-in-out infinite;
+      }
+
+      .cursor {
+        opacity: 0;
+        animation: blink .8s steps(1,end) 2.75s infinite;
+      }
+
+      .scan {
+        animation: scan 4.8s ease-in-out 2.9s infinite;
+      }
+
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes drawLine {
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes rotateRing {
+        to { transform: rotate(360deg); }
+      }
+      @keyframes breathe {
+        0%, 100% { opacity: .25; }
+        50% { opacity: .75; }
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: .45; }
+        50% { opacity: 1; }
+      }
+      @keyframes blink {
+        0%, 48% { opacity: 1; }
+        49%, 100% { opacity: 0; }
+      }
+      @keyframes scan {
+        0% { transform: translateX(-360px); opacity: 0; }
+        15% { opacity: .8; }
+        65% { opacity: .8; }
+        100% { transform: translateX(1280px); opacity: 0; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * { animation: none !important; }
+        .fade-up { opacity: 1; }
+        .divider { stroke-dashoffset: 0; }
+        .cursor { opacity: 1; }
+      }
+    </style>
+  </defs>
 
   <rect width="1200" height="320" rx="24" fill="#0D1117"/>
   <rect x="18" y="18" width="1164" height="284" rx="14" stroke="#30363D"/>
 
-  <circle cx="1090" cy="70" r="4" fill="#58A6FF"/>
-  <text x="1070" y="75" text-anchor="end" fill="#8B949E" font-family="Arial, sans-serif" font-size="12" letter-spacing="2">MOHSENIX</text>
+  <g class="scan">
+    <rect x="-220" y="19" width="260" height="282" fill="url(#movingAccent)" opacity=".12"/>
+  </g>
 
-  <text x="70" y="92" fill="#8B949E" font-family="Arial, sans-serif" font-size="13" letter-spacing="4">HELLO, I’M</text>
-  <text x="66" y="168" fill="#F0F6FC" font-family="Georgia, 'Times New Roman', serif" font-size="68" font-weight="700" letter-spacing="-1">Mohsen Afsharpour</text>
+  <g class="fade-up handle">
+    <circle class="status-dot" cx="1090" cy="70" r="4" fill="#58A6FF"/>
+    <text x="1070" y="75" text-anchor="end" fill="#8B949E" font-family="Arial, sans-serif" font-size="12" letter-spacing="2">MOHSENIX</text>
+  </g>
 
-  <line x1="70" y1="196" x2="665" y2="196" stroke="#30363D"/>
-  <text x="70" y="235" fill="#79C0FF" font-family="Georgia, 'Times New Roman', serif" font-size="27" font-style="italic">I make ideas executable.</text>
+  <text class="fade-up label" x="70" y="92" fill="#8B949E" font-family="Arial, sans-serif" font-size="13" letter-spacing="4">HELLO, I’M</text>
 
-  <circle cx="990" cy="161" r="82" stroke="#30363D" stroke-width="2"/>
-  <circle cx="990" cy="161" r="66" stroke="#58A6FF" stroke-opacity=".35"/>
-  <text x="990" y="178" text-anchor="middle" fill="#F0F6FC" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700">M/X</text>
+  <g clip-path="url(#nameReveal)">
+    <text x="66" y="168" fill="#F0F6FC" font-family="Georgia, 'Times New Roman', serif" font-size="68" font-weight="700" letter-spacing="-1">Mohsen Afsharpour</text>
+  </g>
 
-  <text x="70" y="278" fill="#8B949E" font-family="Arial, sans-serif" font-size="12" letter-spacing="2.2">VIBE CODING  ·  PROMPT SYSTEMS  ·  AI AUTOMATION</text>
-  <text x="1125" y="278" text-anchor="end" fill="#8B949E" font-family="Arial, sans-serif" font-size="12">github.com/mohsenix-code</text>
+  <line class="divider" x1="70" y1="196" x2="665" y2="196" stroke="#30363D"/>
+
+  <g clip-path="url(#taglineReveal)">
+    <text x="70" y="235" fill="#79C0FF" font-family="Georgia, 'Times New Roman', serif" font-size="27" font-style="italic">I make ideas executable.</text>
+  </g>
+  <rect class="cursor" x="390" y="210" width="2" height="30" rx="1" fill="#79C0FF"/>
+
+  <g class="fade-up monogram">
+    <circle class="outer-ring" cx="990" cy="161" r="82" stroke="#58A6FF" stroke-opacity=".5" stroke-width="2" stroke-dasharray="22 12 4 12"/>
+    <circle class="inner-ring" cx="990" cy="161" r="66" stroke="#A371F7" stroke-opacity=".5"/>
+    <g class="orbit-dot">
+      <circle cx="990" cy="79" r="4" fill="#79C0FF"/>
+    </g>
+    <text x="990" y="178" text-anchor="middle" fill="#F0F6FC" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700">M/X</text>
+  </g>
+
+  <text class="fade-up skills" x="70" y="278" fill="#8B949E" font-family="Arial, sans-serif" font-size="12" letter-spacing="2.2">VIBE CODING  ·  PROMPT SYSTEMS  ·  AI AUTOMATION</text>
+  <text class="fade-up url" x="1125" y="278" text-anchor="end" fill="#8B949E" font-family="Arial, sans-serif" font-size="12">github.com/mohsenix-code</text>
 </svg>
