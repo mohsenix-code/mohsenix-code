@@ -1,90 +1,23 @@
-<svg width="1200" height="360" viewBox="0 0 1200 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Mohsenix AI-Native Builder</title>
-  <desc id="desc">A custom system console connecting prompt, agent, automation, and product.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="360" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#050816"/>
-      <stop offset="0.52" stop-color="#11102D"/>
-      <stop offset="1" stop-color="#071B28"/>
-    </linearGradient>
-    <linearGradient id="brand" x1="90" y1="0" x2="720" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#A78BFA"/>
-      <stop offset="1" stop-color="#22D3EE"/>
-    </linearGradient>
-    <linearGradient id="line" x1="760" y1="0" x2="1100" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#A78BFA"/>
-      <stop offset="1" stop-color="#22D3EE"/>
-    </linearGradient>
-    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-      <path d="M32 0H0V32" stroke="#94A3B8" stroke-opacity=".065"/>
-    </pattern>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#000" flood-opacity=".35"/>
-    </filter>
-  </defs>
+<svg width="1200" height="320" viewBox="0 0 1200 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Mohsen Afsharpour</title>
+  <desc id="desc">I make ideas executable — vibe coding, prompt systems, and AI automation.</desc>
 
-  <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
-  <rect width="1200" height="360" rx="28" fill="url(#grid)"/>
-  <rect x="1" y="1" width="1198" height="358" rx="27" stroke="url(#brand)" stroke-opacity=".45" stroke-width="2"/>
+  <rect width="1200" height="320" rx="24" fill="#0D1117"/>
+  <rect x="18" y="18" width="1164" height="284" rx="14" stroke="#30363D"/>
 
-  <g opacity=".22" filter="url(#glow)">
-    <circle cx="1070" cy="72" r="108" fill="#06B6D4"/>
-    <circle cx="480" cy="380" r="150" fill="#7C3AED"/>
-  </g>
+  <circle cx="1090" cy="70" r="4" fill="#58A6FF"/>
+  <text x="1070" y="75" text-anchor="end" fill="#8B949E" font-family="Arial, sans-serif" font-size="12" letter-spacing="2">MOHSENIX</text>
 
-  <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">
-    <circle cx="46" cy="37" r="6" fill="#FB7185"/>
-    <circle cx="67" cy="37" r="6" fill="#FBBF24"/>
-    <circle cx="88" cy="37" r="6" fill="#34D399"/>
-    <text x="111" y="42" fill="#64748B" font-size="13">mohsenix://system/identity</text>
-    <text x="1092" y="42" fill="#34D399" font-size="12">● ONLINE</text>
+  <text x="70" y="92" fill="#8B949E" font-family="Arial, sans-serif" font-size="13" letter-spacing="4">HELLO, I’M</text>
+  <text x="66" y="168" fill="#F0F6FC" font-family="Georgia, 'Times New Roman', serif" font-size="68" font-weight="700" letter-spacing="-1">Mohsen Afsharpour</text>
 
-    <text x="70" y="104" fill="#22D3EE" font-size="15">&gt; BOOTING AI-NATIVE BUILDER...</text>
-    <text x="68" y="191" fill="url(#brand)" font-size="72" font-weight="800" letter-spacing="3">MOHSENIX</text>
-    <text x="72" y="229" fill="#E2E8F0" font-size="18" font-weight="600" letter-spacing="5">IDEA-TO-SYSTEM ENGINEER</text>
-    <text x="72" y="272" fill="#94A3B8" font-size="15">Human imagination, amplified by agents and automation.</text>
+  <line x1="70" y1="196" x2="665" y2="196" stroke="#30363D"/>
+  <text x="70" y="235" fill="#79C0FF" font-family="Georgia, 'Times New Roman', serif" font-size="27" font-style="italic">I make ideas executable.</text>
 
-    <rect x="70" y="302" width="243" height="31" rx="15.5" fill="#0F172A" stroke="#7C3AED" stroke-opacity=".7"/>
-    <circle cx="90" cy="317.5" r="4" fill="#A78BFA" filter="url(#glow)"/>
-    <text x="104" y="322" fill="#C4B5FD" font-size="12">BUILD MODE: ALWAYS ON</text>
-  </g>
+  <circle cx="990" cy="161" r="82" stroke="#30363D" stroke-width="2"/>
+  <circle cx="990" cy="161" r="66" stroke="#58A6FF" stroke-opacity=".35"/>
+  <text x="990" y="178" text-anchor="middle" fill="#F0F6FC" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700">M/X</text>
 
-  <g filter="url(#shadow)">
-    <rect x="735" y="82" width="405" height="206" rx="22" fill="#070B18" fill-opacity=".82" stroke="#334155"/>
-    <text x="765" y="112" fill="#64748B" font-family="ui-monospace, monospace" font-size="12">PRODUCT PIPELINE / LIVE</text>
-
-    <path d="M797 165H871M927 165H1001M1057 165H1090" stroke="url(#line)" stroke-width="2" stroke-dasharray="5 7"/>
-    <path d="M797 225H871M927 225H1001M1057 225H1090" stroke="url(#line)" stroke-opacity=".28" stroke-width="2"/>
-
-    <g font-family="ui-monospace, monospace" font-size="11" text-anchor="middle">
-      <g>
-        <circle cx="775" cy="165" r="22" fill="#17112F" stroke="#A78BFA" stroke-width="2"/>
-        <text x="775" y="169" fill="#DDD6FE">01</text>
-        <text x="775" y="205" fill="#A78BFA">PROMPT</text>
-      </g>
-      <g>
-        <circle cx="905" cy="165" r="22" fill="#14152F" stroke="#8B9CF6" stroke-width="2"/>
-        <text x="905" y="169" fill="#E0E7FF">02</text>
-        <text x="905" y="205" fill="#A5B4FC">AGENT</text>
-      </g>
-      <g>
-        <circle cx="1035" cy="165" r="22" fill="#092331" stroke="#22D3EE" stroke-width="2"/>
-        <text x="1035" y="169" fill="#CFFAFE">03</text>
-        <text x="1035" y="205" fill="#67E8F9">AUTOMATE</text>
-      </g>
-      <g>
-        <rect x="1073" y="143" width="46" height="44" rx="10" fill="#09262B" stroke="#34D399" stroke-width="2"/>
-        <text x="1096" y="169" fill="#D1FAE5">04</text>
-        <text x="1096" y="205" fill="#6EE7B7">SHIP</text>
-      </g>
-    </g>
-
-    <rect x="765" y="245" width="344" height="17" rx="8.5" fill="#111827"/>
-    <rect x="765" y="245" width="326" height="17" rx="8.5" fill="url(#line)" opacity=".8"/>
-    <text x="765" y="280" fill="#64748B" font-family="ui-monospace, monospace" font-size="10">IDEA → WORKING PRODUCT / 95%</text>
-  </g>
+  <text x="70" y="278" fill="#8B949E" font-family="Arial, sans-serif" font-size="12" letter-spacing="2.2">VIBE CODING  ·  PROMPT SYSTEMS  ·  AI AUTOMATION</text>
+  <text x="1125" y="278" text-anchor="end" fill="#8B949E" font-family="Arial, sans-serif" font-size="12">github.com/mohsenix-code</text>
 </svg>
